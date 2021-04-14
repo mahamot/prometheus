@@ -1,0 +1,25 @@
+---
+
+version: '3'
+services:
+  alertmanager:
+    container_name: alertmanager-jb
+    image: prom/alertmanager:latest
+    ports: [ "34393:9093" ]
+  prometheus:
+    container_name: prometheus-jb
+    image: prom/prometheus:latest
+    ports: [ "34390:9090" ]
+  pushgateway:
+    container_name: pushgateway-jb
+    image: prom/pushgateway:latest
+    ports: [ "34391:9091" ]
+  nodeexporter:
+    container_name: nodeexporter-jb
+    image: prom/node-exporter:latest
+    ports: [ "34300:9100" ]
+  nodeexporter:
+    container_name: nodeexporter-jb
+    image: prom/node-exporter:latest
+    ports: [ "34315:9115" ]
+
