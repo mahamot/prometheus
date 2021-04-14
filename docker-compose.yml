@@ -6,6 +6,7 @@ services:
     container_name: alertmanager-jb
     image: prom/alertmanager:latest
     ports: [ "34393:9093" ]
+
   prometheus:
     container_name: prometheus-jb
     image: prom/prometheus:latest
@@ -18,8 +19,8 @@ services:
     container_name: nodeexporter-jb
     image: prom/node-exporter:latest
     ports: [ "34300:9100" ]
-  nodeexporter:
-    container_name: nodeexporter-jb
-    image: prom/node-exporter:latest
+  blackbox_exporter:
+    container_name: blackboxexporter-jb
+    image: prom/blackbox-exporter:latest
     ports: [ "34315:9115" ]
 
