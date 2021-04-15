@@ -6,11 +6,12 @@ services:
     container_name: alertmanager-jb
     image: prom/alertmanager:latest
     ports: [ "34393:9093" ]
-
   prometheus:
     container_name: prometheus-jb
     image: prom/prometheus:latest
     ports: [ "34390:9090" ]
+    volumes:
+      - "./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml"      
   pushgateway:
     container_name: pushgateway-jb
     image: prom/pushgateway:latest
